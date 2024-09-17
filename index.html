@@ -1,0 +1,93 @@
+<!-- Spacebar @ 2024 Source Code (By LiableSoft
+
+  I acknowledge that I credit (https://github.com/LiableSoft/Spacebar) for all the code used.
+
+  LiableSoft Project !-->
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Clicking Game</title>
+        <style>
+            body {
+                font-family: 'Courier New', monospace;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: #1a1a1a;
+                color: #33ff33;
+            }
+            .game-container {
+                text-align: center;
+                background-color: #000000;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 0 20px rgba(51, 255, 51, 0.3);
+            }
+            button {
+                font-family: 'Courier New', monospace;
+                font-size: 16px;
+                padding: 12px 24px;
+                margin: 10px;
+                cursor: pointer;
+                background-color: #000000;
+                color: #33ff33;
+                border: 2px solid #33ff33;
+                border-radius: 5px;
+                transition: all 0.3s ease;
+            }
+            button:hover {
+                background-color: #33ff33;
+                color: #000000;
+            }
+            #clk {
+                font-size: 36px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+            #tdw {
+                font-style: italic;
+                color: #cccccc;
+            }
+            h1 {
+                color: #33ff33;
+                text-shadow: 0 0 10px rgba(51, 255, 51, 0.5);
+            }
+            @keyframes shake {
+                0% { transform: translateX(0); }
+                25% { transform: translateX(-10px); }
+                50% { transform: translateX(10px); }
+                75% { transform: translateX(-10px); }
+                100% { transform: translateX(0); }
+            }
+
+            .shake {
+                animation: shake 0.5s ease forwards;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="game-container">
+            <h1>Spacebar</h1>
+            <p id="clk">$0</p>
+            <button id="perClick">+1 $/click ($50)</button>
+            <button id="perSecond">+1 $/sec ($20)</button>
+            <br>
+            <button id="5click">+5 $/click ($100)</button>
+            <button id="5sec">+5 $/sec ($200)</button>
+            <p id="tdw">Loading...</p>
+        </div>
+        <script src="Client.js"></script>
+        <script>
+            window.addEventListener('keydown', function(e) {
+                if (e.code === 'Space' && e.target === document.body) {
+                    e.preventDefault();
+                }
+            });
+        </script>
+    </body>
+</html>
